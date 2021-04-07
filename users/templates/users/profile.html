@@ -1,0 +1,16 @@
+{% extends "blog/base.html" %}
+{% block content %}
+  <!-- user doesn't have to be passed, it is an inbuilt django feature to detect the current user. -->
+  <!-- <h1>{{ user.username }}</h1> -->
+
+  <div class="content-section">
+  <div class="media">
+    <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
+    <div class="media-body">
+      <h2 class="account-heading">{{ user.username }}</h2>
+      <p class="text-secondary">{{ user.email }}</p>
+    </div>
+  </div>
+  <!-- FORM HERE -->
+</div>
+{% endblock content %}

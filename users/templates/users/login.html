@@ -1,0 +1,25 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+  <div class="content-section">
+    <form class="" method="post">
+      {% csrf_token %}
+      <!-- csrf token is related to security and should always be included in forms -->
+      <fieldset class= "form-group">
+        <legend class="border-bottom mb-4">Log In</legend>
+        <!-- Displaying the form in crispy form tags format: -->
+        {{ form|crispy }}
+        <!-- (w/o crispy forms)form.as_p will render form in paragraph tags  -->
+      </fieldset>
+      <div class="form-group">
+        <button type="submit" class="btn btn-outline-info" name="button">Sign In</button>
+      </div>
+    </form>
+    <div class="border-top pt-3">
+      <small class= "text-muted">
+        Don't have an account yet?
+        <a class="ml-2" href="{% url 'register' %}">Sign Up Now</a>
+      </small>
+    </div>
+  </div>
+{% endblock content %}
